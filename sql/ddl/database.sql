@@ -7,7 +7,8 @@ CREATE TABLE user_account (
     user_uid UUID NOT NULL PRIMARY KEY,
     username VARCHAR(50) NOT NULL,
     pswhash TEXT NOT NULL,
-    date_of_creation DATE NOT NULL
+    date_of_creation DATE NOT NULL,
+    UNIQUE (username)
 );
 
 -- Not necessary to include the salt itself as a table entry, as the crypt() includes the salt during encryption of the hash. Thus the hash contains the salt as the first 29 characters, and crypt() uses these for decryption
