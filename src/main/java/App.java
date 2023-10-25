@@ -11,9 +11,9 @@ public class App {
             System.exit(1);
         }
 
-        String password = args[0];        
-        try {
-            Connection connection = new App().getConnection(password);
+        String password = args[0]; 
+        // try-with-resources automatically handles closing the connection       
+        try (Connection connection = new App().getConnection(password)){
             // Test database operations, confirm successful operations in psql
         } catch (SQLException e) {
             e.printStackTrace();
