@@ -13,3 +13,6 @@ lib/
 settings.gradle
 build.gradle
 gradle.properties
+
+# Ignore random ass ./vscode folder with some settings.json file
+.vscode/
